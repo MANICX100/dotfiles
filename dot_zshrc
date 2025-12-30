@@ -47,7 +47,7 @@ chezsync() {
 }
 
 catfunction() {
-  rg "^$1\(\) \{" -A 1000 ~/setup_scripts/zshrc | sed '/^}$/q'
+  rg "^$1\(\) \{" -A 1000 ~/.local/share/chezmoi/dot_zshrc | sed '/^}$/q'
 }
 
 symlinkback() {
@@ -154,7 +154,7 @@ rmfunction() {
     echo "Usage: rmfunction <funcname>" >&2
     return 1
   fi
-  sed -i "/^$1()/,/^}/d" ~/.zshrc
+  sed -i "/^$1()/,/^}/d" ~/.local/share/chezmoi/dot_zshrc
   echo "Removed function '$1' from rc file"
 }
 
