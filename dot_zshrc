@@ -31,19 +31,15 @@ HISTFILE=$HOME/.zsh_history
 chezsync() {
   local oldpwd="$PWD"
   local ts
-
-  trap 'cd "$oldpwd"' RETURN
-
   cd ~/.local/share/chezmoi || return 1
-
-  chezmoi apply || return 1
-
+  chezmoi apply || { cd "$oldpwd"; return 1 }
   git add .
-
   ts=$(date "+%Y-%m-%d %H:%M:%S")
-
-  git commit -m "$ts" || return 1
-  git push -u origin main
+  if ! git diff --cached --quiet; then
+    git commit -m "$ts" || { cd "$oldpwd"; return 1 }
+  fi
+  git push -u origin main || { cd "$oldpwd"; return 1 }
+  cd "$oldpwd"
 }
 
 catfunction() {
