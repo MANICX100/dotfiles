@@ -32,12 +32,10 @@ chezsync() {
   local oldpwd="$PWD"
   local ts
 
-  # Always return to previous directory
   trap 'cd "$oldpwd"' RETURN
 
   cd ~/.local/share/chezmoi || return 1
 
-  # Apply all pending edits to the real filesystem
   chezmoi apply || return 1
 
   git add .
