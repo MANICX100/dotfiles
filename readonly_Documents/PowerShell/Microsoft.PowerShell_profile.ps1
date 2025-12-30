@@ -2,7 +2,7 @@ function ChezSync {
     $oldpwd = Get-Location
     try {
         Set-Location "$env:USERPROFILE\.local\share\chezmoi"
-
+		git pull -f
         gsudo chezmoi apply
 
         git add .
