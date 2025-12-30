@@ -906,7 +906,7 @@ Set-Alias rcupdate "Update-Profile"
 
 # Functions
 
-function rc {Notepad $PROFILE}
+function rc {chezmoi edit $PROFILE}
 function Update-Profile {
     if (-not $global:canConnectToGitHub) { return }
     
