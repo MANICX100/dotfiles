@@ -32,7 +32,7 @@ chezsync() {
   local oldpwd="$PWD"
   local ts
   cd ~/.local/share/chezmoi || return 1
-  chezmoi apply || { cd "$oldpwd"; return 1 }
+  doas chezmoi apply || { cd "$oldpwd"; return 1 }
   git add .
   ts=$(date "+%Y-%m-%d %H:%M:%S")
   if ! git diff --cached --quiet; then
