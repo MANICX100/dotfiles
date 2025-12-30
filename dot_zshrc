@@ -29,12 +29,19 @@ SAVEHIST=1000
 HISTFILE=$HOME/.zsh_history
 
 chezsync() {
-  chezmoi cd || return 1
+  local oldpwd="$PWD"
+  local ts
+
+  # Always return to previous directory
+  trap 'cd "$oldpwd"' RETURN
+
+  cd ~/.local/share/chezmoi || return 1
+
+  # Apply all pending edits to the real filesystem
+  chezmoi apply || return 1
 
   git add .
 
-  # ISO-like timestamp: 2025-12-30 15:42:10
-  local ts
   ts=$(date "+%Y-%m-%d %H:%M:%S")
 
   git commit -m "$ts" || return 1
@@ -149,7 +156,7 @@ rmfunction() {
     echo "Usage: rmfunction <funcname>" >&2
     return 1
   fi
-  sed -i "/^$1()/,/^}/d" ~/setup_scripts/zshrc
+  sed -i "/^$1()/,/^}/d" ~/.zshrc
   echo "Removed function '$1' from rc file"
 }
 
