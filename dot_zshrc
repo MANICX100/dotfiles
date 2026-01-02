@@ -680,7 +680,6 @@ alias gitc='git clone --depth 2'
 alias edithosts='doas $EDITOR /etc/hosts'
 alias fd='fzf --query'
 alias webcam='doas modprobe v4l2loopback'
-alias cloudsync='onedrive --sync --force'
 
 #alias ffmpeg='$HOME/ffmpeg/ffmpeg'
 alias ffprobe='mediainfo'
@@ -741,6 +740,11 @@ alias logoff='doas pkill -u dan'
 alias logout='logoff'
 #alias yt-dlp='/usr/local/bin/yt-dlp'
 alias autoremove='doas dnf5 autoremove -y'
+
+function cloudsync() {
+doas chmod -R a+rwx ~/OneDrive
+onedrive --sync --force
+}
 
 function editdns(){
 doas $EDITOR /etc/supervisor/conf.d/dnsproxy.conf
