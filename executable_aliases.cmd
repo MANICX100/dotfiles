@@ -35,3 +35,5 @@ pwd=echo %CD%
 history=doskey /history
 ..=cd ..
 ...=cd ..\..
+rc=chezmoi edit aliases.cmd
+pwsh=Powershell -Command "$1"
