@@ -105,7 +105,7 @@ ToggleChrome() {
 #F5::Run("narrator.exe")
 #F4::A_Clipboard := WinGetClass("A")
 
-#Shift::g::Run "C:\Users\Dan\Desktop\Text-Grab.exe"
+#+g::Run "C:\Users\Dan\Desktop\Text-Grab.exe"
 
 #e::
 ^!e::
