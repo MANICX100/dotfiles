@@ -1,5 +1,65 @@
-# PowerShell 5.1 Profile
-# All tools and external commands are kept as-is.
+# --- ANSI Color Helpers ---
+function Write-Colored {
+    param(
+        [string]$Text,
+        [int]$R,
+        [int]$G,
+        [int]$B,
+        [bool]$Background = $false
+    )
+    $colorCode = if ($Background) { "48;2;$R;$G;$B" } else { "38;2;$R;$G;$B" }
+    Write-Host -NoNewline "$([char]0x1B)[$colorCode`m$Text$([char]0x1B)[0m"
+}
+
+# --- Prompt Function (PowerShell 5.1 compatible) ---
+function prompt {
+    $path = $(Get-Location).Path
+    $sections = $path.Split([char]'\')
+    $level = 0
+    $git_root = -1
+    $git_branch = ""
+
+    if ($(git rev-parse --is-inside-work-tree 2>$null) -eq "true") {
+        $git_root = $(git rev-parse --show-toplevel).Split([char]'\').Length - 1
+        $git_branch = $(git rev-parse --abbrev-ref HEAD)
+    }
+
+    $prompt = ""
+    $separator = [char]0xE0B8
+    $reversedSeparator = [char]0xE0CA
+
+    if ($sections[0].EndsWith(":")) {
+        Write-Colored " $($sections[0].TrimEnd([char]':')) " 227 146 52 $false
+        Write-Colored "$([char]0xE0B4)" 227 146 52 $false
+        $level += 1
+    }
+
+    for(; $level -lt $sections.Length; $level++) {
+        if ($level -eq $git_root) {
+            Write-Colored " $($sections[$level]) " 70 138 74 $false
+            Write-Colored "$([char]0xE0A0)" 70 138 74 $false
+            Write-Colored " $git_branch " 72 163 77 $false
+        }
+        elseif ($sections[$level] -eq "Debug" -or $sections[$level] -eq "Release") {
+            Write-Colored "$reversedSeparator" 186 54 54 $false
+            Write-Colored " $($sections[$level]) " 186 54 54 $true
+            Write-Colored "$separator" 186 54 54 $false
+        }
+        elseif ($level % 2 -eq 0) {
+            Write-Colored " $($sections[$level]) " 99 99 99 $false
+        }
+        else {
+            Write-Colored " $($sections[$level]) " 80 80 80 $false
+        }
+        if ($level -lt $sections.Length - 1) {
+            Write-Colored "$separator" 99 99 99 $false
+        }
+    }
+
+    Write-Colored "$([char]0xE0B0)" 99 99 99 $false
+    Write-Colored " " 255 255 255 $false
+    "> "
+}
 
 function ChezSync {
     $oldpwd = Get-Location
