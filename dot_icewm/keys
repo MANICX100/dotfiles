@@ -1,4 +1,5 @@
 key "Super+Shift+H" /home/dan/highlight-pointer --show-cursor --outline 2 --radius 40 --auto-hide-highlight --hide-timeout 1 &
+key "Super+Shift+G" flatpak run com.github.tenderowl.frog
 
 key "BTN_SOUTH" xdotool key space
 
@@ -13,7 +14,7 @@ key "Super+Shift+D" wmctrl -k off
 key "Super+Shift+M" flatpak run org.kde.kruler/x86_64/stable
 key "Super+Shift+C" gpick
 
-key "Super+period" flatpak run org.gnome.Characters/x86_64/stable
+key "Super+period" gnome-characters
 key "Ctrl+Super+Enter" /home/dan/yasr.sh
 key "Super+KP_Add" kmag
 
@@ -40,7 +41,7 @@ key "Super+i" pavucontrol
 key "Super+Shift+S" scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
 key "Shift+Print" flatpak run com.dec05eba.gpu_screen_recorder/x86_64/stable
-key "Ctrl+Alt+m" flatpak run org.kde.audiotube
+key "Ctrl+Alt+m" audiotube
 key "Ctrl+Space" /home/dan/setup_scripts/custom_dmenu_run.sh
 key "Ctrl+Alt+x" xkill
 key "Ctrl+Shift+Esc" flatpak run net.nokyan.Resources/x86_64/stable
