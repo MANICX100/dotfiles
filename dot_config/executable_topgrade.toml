@@ -234,7 +234,7 @@ dnf_arguments = "--minimal --refresh"
 
 [flatpak]
 # Use sudo for updating the system-wide installation
-# use_sudo = true
+use_sudo = true
 
 
 [distrobox]
