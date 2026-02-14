@@ -133,7 +133,7 @@ cleanup = true
 # yay_arguments = "--nodevel"
 
 # Arguments to pass dnf when updating packages
-dnf_arguments = "--minimal --refresh"
+dnf_arguments = "--refresh"
 
 # aura_aur_arguments = "-kx"
 
