@@ -622,7 +622,7 @@ alias recordall='micandsystem'
 alias recordalloff='micandsystemoff'
 alias uninstall='remove'
 alias de='ls -l /usr/share/xsessions/'
-alias loginmgr='cat /etc/X11/default-display-manager'
+alias loginmgr='systemctl status display-manager'
 alias displaymanager='loginmgr'
 alias nom='$HOME/go/bin/nom'
 
