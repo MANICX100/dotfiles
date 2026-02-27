@@ -1435,3 +1435,7 @@ fi
 
 source "/home/dan/.rm-safely" >/dev/null 2>&1
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+fi
