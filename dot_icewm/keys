@@ -22,7 +22,7 @@ key "Ctrl+Alt+b" xdg-open about:blank
 
 key "Menu" xdg-open https://chatgpt.com
 
-key "Ctrl+Alt+t" alacritty
+key "Ctrl+Alt+t" attyx
 key "Ctrl+Alt+r" doas systemctl reboot
 
 key "Ctrl+Alt+s" doas poweroff
@@ -31,7 +31,7 @@ key "Ctrl+Alt+s" doas poweroff
 
 key "Ctrl+Alt+L" /home/dan/lock-x11.sh
 key "Super+L" /home/dan/lock-x11.sh
-key "Ctrl+Alt+n" alacritty -e nvem /home/dan/OneDrive/notepad.txt
+key "Ctrl+Alt+n" attyx -e nvem /home/dan/OneDrive/notepad.txt
 key "Super+E" xdg-open "/home/dan/Jellyfin Server Media/"
 
 key "Ctrl+Alt+Shift+E" /home/dan/windows.sh
