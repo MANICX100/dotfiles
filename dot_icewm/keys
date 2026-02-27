@@ -42,7 +42,7 @@ key "Super+Shift+S" scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboa
 
 key "Shift+Print" flatpak run com.dec05eba.gpu_screen_recorder/x86_64/stable
 key "Ctrl+Alt+m" audiotube
-key "Ctrl+Space" /home/dan/setup_scripts/custom_dmenu_run.sh
+key "Ctrl+Space" /home/dan/dmenu.sh
 key "Ctrl+Alt+x" xkill
 key "Ctrl+Shift+Esc" flatpak run net.nokyan.Resources/x86_64/stable
 
