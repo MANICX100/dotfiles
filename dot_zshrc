@@ -3,12 +3,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 typeset -g POWERLEVEL8K_INSTANT_PROMPT=quiet
+source $HOME/.profile
 
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
-
 [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
-
-fpath=(/path/to/antidote/functions $fpath)
+fpath=(/home/dan/.antidote/functions $fpath)
 autoload -Uz antidote
 
 if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
@@ -16,7 +15,6 @@ if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
 fi
 
 source ${zsh_plugins}.zsh
-source $HOME/.profile
 
 bindkey -r '^V'
 
