@@ -536,7 +536,6 @@ alias f2fsformat='doas mkfs.f2fs'
 alias btrfsformat='doas mkfs.btrfs'
 
 alias gfn='google-chrome-stable --proxy-server="127.0.0.1:8080"'
-alias df='dysk'
 alias grep='rg'
 alias awk='frawk'
 alias find='bfs'
