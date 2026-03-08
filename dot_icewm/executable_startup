@@ -9,5 +9,4 @@ qlipper &
 cortile &
 kdeconnect-indicator &
 /usr/lib/notification-daemon/notification-daemon &
-setxkbmap -layout gb -variant extd &
 setxkbmap -option compose:ralt &
