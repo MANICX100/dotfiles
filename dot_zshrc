@@ -519,7 +519,7 @@ alias ghosttyconfig='$HOME/.config/ghostty/config'
 alias heavytasklist='ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 20'
 #alias mpvav1='mpv * --hwdec=0'
 
-alias rmfolders='rm -r */'
+alias rmfolders='doas bfs . -xdev -mindepth 1 -type d -exec rip {} +'
 alias lockdns='doas chattr +i /etc/resolv.conf'
 alias unlockdns='doas chattr +i /etc/resolv.conf'
 
