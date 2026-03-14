@@ -1,0 +1,2 @@
+prog "Attyx" "utilities-terminal" /usr/local/bin/attyx
+prog "Browser" "web-browser" xdg-open about:blank
