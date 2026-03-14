@@ -157,16 +157,6 @@ rmfunction() {
 
 bgrun() { rust-parallel "$1" ::: "${@:2}"; }
 
-saveclipimg() {
-  if xclip -selection clipboard -t image/png -o > /dev/null 2>&1; then
-    xclip -selection clipboard -t image/png -o | convert png:- output.jpg
-    echo "✅ Saved clipboard image to output.jpg"
-  else
-    echo "⚠️  Clipboard does not contain a PNG image" >&2
-    return 1
-  fi
-}
-
 localsdl() {
     echo "Please copy the 'Copy as cURL (bash)' command for the YouTube playlist manifest (.m3u8) from your browser's network tab."
     echo "Paste the command below and press Enter:"
@@ -508,7 +498,7 @@ alias jjpull='jj git fetch && jj rebase -d main'
 alias trash='xdg-open ~/.local/share/Trash/files'
 alias termeverything='~/AppImages/term.everythingmmulet.com.appimage'
 alias kernels='ls -1 /boot/vmlinuz-*'
-alias clip='xclip -selection clipboard'
+alias clip='2>&1|xclip -selection clipboard'
 alias wp='doas docker start wordpressdb && doas docker start wordpress'
 alias lzd='doas $(which lazydocker)'
 alias kdedefaults='kcmshell6 componentchooser'
@@ -642,7 +632,7 @@ alias mdfind='fd'
 alias locate='fd'
 alias networkquality='speedtest-cli'
 alias screencapture='scrot'
-alias pbcopy='xclip -selection clipboard'
+alias pbcopy='clip'
 alias pbpaste='xclip -selection clipboard -o'
 alias say='espeak'
 alias sips='vipsthumbnail'
