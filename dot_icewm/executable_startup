@@ -12,3 +12,4 @@ cortile &
 kdeconnect-indicator &
 /usr/lib/notification-daemon/notification-daemon &
 setxkbmap -option compose:ralt &
+kdeconnectd &
