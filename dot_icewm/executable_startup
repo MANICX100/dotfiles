@@ -2,6 +2,8 @@
 
 /usr/libexec/polkit-mate-authentication-agent-1 &
 numlockx &
+nm-applet &
+blueman-applet &
 deskflow &
 $HOME/AppImages/beeper.appimage --no-sandbox %U &
 flameshot &
