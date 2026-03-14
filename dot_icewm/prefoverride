@@ -1,2 +1,4 @@
 DesktopBackgroundColor="rgb:00/00/00"
 DesktopBackgroundImage=""
+ShowMailboxStatus=0
+TaskBarShowMailboxStatus=0
