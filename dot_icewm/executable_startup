@@ -1,6 +1,8 @@
 #!/bin/zsh
 
 /usr/libexec/polkit-mate-authentication-agent-1 &
+/usr/libexec/xdg-desktop-portal &
+/usr/libexec/xdg-desktop-portal-gtk &
 numlockx &
 nm-applet &
 blueman-applet &
