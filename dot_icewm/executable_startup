@@ -12,6 +12,6 @@ flameshot &
 qlipper &
 cortile &
 kdeconnect-indicator &
-/usr/lib/notification-daemon/notification-daemon &
+/usr/libexec/notification-daemon &
 setxkbmap -option compose:ralt &
 kdeconnectd &
