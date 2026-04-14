@@ -25,8 +25,8 @@ key "Menu" xdg-open https://gemini.google.com/
 key "Ctrl+Alt+t" /usr/local/bin/attyx
 key "Ctrl+Alt+r" doas systemctl reboot
 
-key "Ctrl+Alt+s" doas poweroff
-#key "Ctrl+Alt+s" doas systemctl suspend
+#key "Ctrl+Alt+s" doas poweroff
+key "Ctrl+Alt+s" doas systemctl suspend -i
 #key "Ctrl+Alt+s" /home/dan/wakeschedule.sh
 
 key "Ctrl+Alt+L" /home/dan/lock-x11.sh
