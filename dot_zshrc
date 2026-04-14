@@ -494,6 +494,7 @@ rmoldmodules() {
   (( $#pkgs )) && doas apt-get purge "${pkgs[@]}" -y || echo "No old kernel packages to remove."
 }
 
+alias sleepblockers='systemd-inhibit --list'
 alias jjpull='jj git fetch && jj rebase -d main'
 alias trash='xdg-open ~/.local/share/Trash/files'
 alias termeverything='~/AppImages/term.everythingmmulet.com.appimage'
