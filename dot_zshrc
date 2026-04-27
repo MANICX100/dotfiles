@@ -1412,9 +1412,10 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # bun completions
 [ -s "/home/dan/$HOME/.bun/_bun" ] && source "/home/dan/$HOME/.bun/_bun"
 
-# bun
+# PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # fnm
 FNM_PATH="/home/dan/.local/share/fnm"
@@ -1429,3 +1430,5 @@ source "/home/dan/.rm-safely" >/dev/null 2>&1
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 fi
+
+export EZA_COLORS="di=38;5;226"
