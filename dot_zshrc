@@ -1432,3 +1432,6 @@ if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
 fi
 
 export EZA_COLORS="di=38;5;226"
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share:$HOME/.local/share"
