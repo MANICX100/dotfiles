@@ -1,6 +1,4 @@
 if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  # Tell D-Bus about our X session before launching the WM
   dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP=ICEWM
-  
   exec startx /usr/bin/icewm-session
 fi
