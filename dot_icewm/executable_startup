@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP=ICEWM &
 /usr/libexec/polkit-mate-authentication-agent-1 &
 /usr/libexec/xdg-desktop-portal &
 /usr/libexec/xdg-desktop-portal-gtk &
