@@ -22,7 +22,7 @@ key "Ctrl+Alt+b" xdg-open about:blank
 
 key "Menu" xdg-open https://gemini.google.com/
 
-key "Ctrl+Alt+t" /usr/local/bin/attyx
+key "Ctrl+Alt+t" st
 key "Ctrl+Alt+r" doas systemctl reboot
 
 #key "Ctrl+Alt+s" doas poweroff
