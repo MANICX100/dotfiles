@@ -27,6 +27,49 @@ setopt share_history
 SAVEHIST=1000
 HISTFILE=$HOME/.zsh_history
 
+# Auto-shutdown when download speed drops below 100KB/s for 2 minutes
+downoff() {
+    # Automatically detect the primary active network interface using ripgrep
+    local iface
+    iface=$(ip route | rg default | head -n1)
+    
+    # Extract the interface name (the word following 'dev')
+    iface=${${iface##*dev }[1]}
+
+    if [[ -z "$iface" ]]; then
+        echo "Error: No active network interface found!"
+        return 1
+    fi
+
+    echo "Monitoring interface: $iface"
+    echo "System will shut down if download speed stays below 100 KB/s for 2 minutes."
+    echo "Press Ctrl+C to cancel."
+    
+    local count=0
+    local rx1 rx2 speed
+
+    while true; do
+        rx1=$(cat /sys/class/net/$iface/statistics/rx_bytes)
+        sleep 10
+        rx2=$(cat /sys/class/net/$iface/statistics/rx_bytes)
+        
+        # Calculate speed in KB/s
+        speed=$(( (rx2 - rx1) / 10 / 1024 ))
+        
+        if (( speed < 100 )); then
+            (( count += 10 ))
+        else
+            count=0
+        fi
+        
+        if (( count >= 120 )); then
+            echo "Download speed below 100KB/s for 2 mins. Shutting down..."
+            doas poweroff
+            break
+        fi
+    done
+}
+
 chezsync() {
   local oldpwd="$PWD"
   local ts
