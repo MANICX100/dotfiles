@@ -1,3 +1,22 @@
+function Convert-Base64toHexString {
+[CmdletBinding()]
+  param(
+    [parameter(Mandatory, ValueFromPipeline)]
+    [alias("base64string")]
+    [string]$InputObject
+  )
+
+  Process{
+    $data = $InputObject
+
+    $byteArray = [System.Convert]::FromBase64String($data);
+
+    [string]$hexString = $byteArray.foreach({$_ | Format-Hex}).hexbytes -join $null;
+
+    return $hexString
+  }
+}
+
 function ChezSync {
     $oldpwd = Get-Location
     try {

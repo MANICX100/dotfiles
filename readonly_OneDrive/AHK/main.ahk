@@ -69,7 +69,7 @@ global komorebi_is_running := false ; Assume Komorebi is stopped initially
 }
 #HotIf
 
-AppsKey::Run "https://t3.chat/"
+AppsKey::Run "https://gemini.google.com/"
 
 Home::Reload()
 
@@ -98,7 +98,8 @@ ToggleChrome() {
     }
 }
 
-^!S::Shutdown(5)
+^!s::DllCall("PowrProf\SetSuspendState", "Int", 0, "Int", 0, "Int", 0)
+;^!S::Shutdown(5)
 ^!R::Shutdown(6)
 ^!n::Run("notepad.exe")
 
@@ -108,7 +109,6 @@ ToggleChrome() {
 #+g::Run "C:\Users\Dan\Desktop\Text-Grab.exe"
 
 #e::
-^!e::
 {
 USERPROFILE := EnvGet("USERPROFILE")
 Run(USERPROFILE "\Documents")
