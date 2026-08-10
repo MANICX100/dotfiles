@@ -14,5 +14,4 @@ qlipper &
 cortile &
 kdeconnect-indicator &
 /usr/libexec/notification-daemon &
-setxkbmap -option compose:ralt &
 kdeconnectd &
