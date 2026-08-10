@@ -639,8 +639,9 @@ alias bufferw='doas sync & watch -n 1 rg -e Dirty: /proc/meminfo'
 alias pip='python -m pip'
 alias pip3='pip'
 
-alias icewmkeys='$EDITOR $HOME/.icewm/keys'
-alias icewmstart='$EDITOR $HOME/.icewm/startup'
+alias icewmkeys='chezmoi edit .icewm/keys'
+alias icewmstart='chezmoi edit .icewm/startup'
+
 alias tvn='tvnamer --recursive'
 alias tvrename='tvn "$HOME/Jellyfin Server Media/TV"'
 alias debversion='apt-cache policy'
