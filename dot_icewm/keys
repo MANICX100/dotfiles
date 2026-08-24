@@ -38,7 +38,8 @@ key "Ctrl+Alt+Shift+E" /home/dan/windows.sh
 key "Ctrl+Alt+i" pavucontrol
 key "Super+i" pavucontrol
 
-key "Super+Shift+S" scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+key "Super+Shift+S" ksnip -r
+#key "Super+Shift+S" scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
 key "Shift+Print" flatpak run com.dec05eba.gpu_screen_recorder/x86_64/stable
 key "Ctrl+Alt+m" flatpak run org.kde.audiotube
