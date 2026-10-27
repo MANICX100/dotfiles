@@ -69,7 +69,13 @@ global komorebi_is_running := false ; Assume Komorebi is stopped initially
 }
 #HotIf
 
-AppsKey::Run "https://gemini.google.com/"
+^!+y::
+{
+    WinSetAlwaysOnTop 1, "A"
+    WinMove A_ScreenWidth - 400, 0, 400, A_ScreenHeight, "A"
+}
+
+AppsKey::Run "https://chat.deepseek.com/"
 
 Home::Reload()
 
@@ -121,6 +127,7 @@ return
     return
 }
 
+;Ctrl + Alt + Shift + T
 ^!+t::
 {
     WinSetAlwaysOnTop -1, "A"
