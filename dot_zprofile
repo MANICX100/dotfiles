@@ -1,3 +1,4 @@
-if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx /usr/local/bin/icewm-session
+# Auto-start IceWM under kmscon
+if [[ -z $DISPLAY ]] && [[ $TERM == "kmscon" ]]; then
+  exec kmscon-launch-gui startx /usr/local/bin/icewm-session
 fi
