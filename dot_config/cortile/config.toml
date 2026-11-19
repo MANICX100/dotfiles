@@ -205,10 +205,10 @@ proportion_increase = "Control-Shift-KP_3"
 proportion_decrease = "Control-Shift-KP_1"
 
 # Some commands above will affect all screens if this key is pressed in addition (Mod1 = Alt_L).
-mod_screens = "Mod1"
+#mod_screens = "Mod1"
 
 # Some commands above will affect all workspaces if this key is pressed in addition (Mod4 = Super_L).
-mod_workspaces = "Mod4"
+#mod_workspaces = "Mod4"
 
 ################################################################################
 [corners]                                # Action strings from [keys] section. #
