@@ -16,4 +16,4 @@ kdeconnect-indicator &
 /usr/libexec/notification-daemon &
 kdeconnectd &
 /home/dan/AppImages/handy.appimage &
-xdynamicisland &
+/usr/local/bin/xdynamicisland &
