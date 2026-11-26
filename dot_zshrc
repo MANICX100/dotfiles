@@ -19,7 +19,6 @@ source ${zsh_plugins}.zsh
 bindkey -r '^V'
 
 export EDITOR=nvem
-export TERM=linux
 export NODE_COMPILE_CACHE=~/.cache/nodejs-compile-cache
 export JAVA_HOME=/jdk
 setopt nullglob
